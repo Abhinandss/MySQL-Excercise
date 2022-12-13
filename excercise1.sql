@@ -1,0 +1,17 @@
+create database aid;
+use aid;
+create table hospital(dr_id varchar(20),dr_name varchar(20),dept varchar(20),qualf varchar(20),exp int);
+insert into hospital values('d01','sadiq','ortho','mbbs',3);
+insert into hospital values('d02','arun','gynacologist','dtcd',8);
+insert into hospital values('d03','rahul','psychiatry','md',5);
+insert into hospital values('d04','arjun','radiology','mbbs',4);
+insert into hospital values('d05','allen','cardiologist','dch',7);
+select *from hospital;
+select dr_name,dept from hospital;
+select dr_name,dept from hospital where exp>5;
+select dr_name from hospital where dept='ortho' and exp=3;
+alter table hospital add name varchar(20) not null, add phone varchar(20) not null;
+alter table hospital drop name,drop phone;
+delete from hospital where dr_id='d03'; 
+alter table hospital drop phone;
+drop table hospital;
